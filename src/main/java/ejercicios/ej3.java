@@ -28,20 +28,24 @@ public class ej3 {
     Q;w;e;r;t;y;S;H;J;K;G
          */
         String idFichero = "ej3.txt";
-        Random rd=new Random();
+        Random rd = new Random();
         char letra;
         try ( BufferedWriter flujo = new BufferedWriter(new FileWriter(idFichero))) {
-            for(int i=0;i<75;i++){
-                letra=(char) (rd.nextInt(90-65+1)+65);
-                flujo.write(idFichero+";");
-                if(letra=='g' || letra=='G'){
-                   flujo.newLine(); 
-                }    
+            for (int i = 0; i < 75; i++) {
+                letra = (char) (rd.nextInt(90 - 65 + 1) + 65);
+                flujo.write(letra + ";");
+                if (letra == 'g' || letra == 'G') {
+                    flujo.newLine();
+                }              
             }
+            // Metodo fluh() guarda cambios en disco 
+            flujo.flush();
+            System.out.println("Fichero " + idFichero + " creado correctamente.");
 
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+         System.out.println("Termina!");
 
     }
 }
