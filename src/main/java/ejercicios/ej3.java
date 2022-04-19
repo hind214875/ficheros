@@ -8,6 +8,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
+import org.apache.commons.lang.RandomStringUtils;
 
 /**
  *
@@ -29,14 +30,14 @@ public class ej3 {
          */
         String idFichero = "ej3.txt";
         Random rd = new Random();
-        char letra;
-        try ( BufferedWriter flujo = new BufferedWriter(new FileWriter(idFichero))) {
-            for (int i = 0; i < 75; i++) {
-                letra = (char) (rd.nextInt(90 - 65 + 1) + 65);
-                flujo.write(letra + ";");
-                if (letra == 'g' || letra == 'G') {
-                    flujo.newLine();
-                }              
+        String letra;
+        try (BufferedWriter flujo = new BufferedWriter(new FileWriter(idFichero))) {
+            for (int i = 0; i < 75; i++) { 
+                do{
+                    letra = RandomStringUtils.randomAlphabetic(1);
+                    flujo.write(letra + ";");
+                }while(!letra.equalsIgnoreCase("g"));  
+                   flujo.newLine();     
             }
             // Metodo fluh() guarda cambios en disco 
             flujo.flush();
@@ -45,7 +46,7 @@ public class ej3 {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-         System.out.println("Termina!");
+        System.out.println("Termina!");
 
     }
 }
