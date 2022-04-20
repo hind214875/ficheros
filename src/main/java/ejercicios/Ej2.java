@@ -7,7 +7,6 @@ package ejercicios;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -29,7 +28,7 @@ public class Ej2 {
         String idFichero = "teclado.txt";
 
         try ( BufferedWriter flujo = new BufferedWriter(new FileWriter(idFichero))) {
-            String txt="";
+            String txt=" ";
             do {
                 System.out.println("Escribe que quieres");
                 Scanner sc = new Scanner(System.in);
