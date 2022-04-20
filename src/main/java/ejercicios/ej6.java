@@ -35,24 +35,30 @@ public class ej6 {
                 //take every caracter and save it in a array of String
                 tokens = linea.split(";");
                 //recorrer el token and show the strings
-                for (String obj : tokens) {
-                    System.out.print(obj + " ");      
+//                for (String obj : tokens) {
+//                    System.out.print(obj + " ");      
+//                }
+                for (int i = 0; i < tokens.length; i++) {
+                    System.out.print(tokens[i] + " ");
+                    if (buscarPattern(tokens) != -1) {
+                        System.out.println("el pattern exist en la linea:" + buscarPattern(tokens));
+                        System.out.println("la linea " + i);
+                    }
                 }
-                System.out.println();  
-                 System.out.println("el pattern exist en la linea:"+buscarPattern(tokens));
+                System.out.println();
+
             }
-            
-             
+
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         }
     }
-    
-    public static int buscarPattern(String[] lista){
+
+    public static int buscarPattern(String[] lista) {
         int posicion = -1;
-        for (int i = 0; i <lista.length; i++) {
-            if(lista[i].contentEquals("w e b")){
-                posicion=i;
+        for (int i = 0; i < lista.length; i++) {
+            if (lista[i].contentEquals("w")) {
+                posicion = i;
                 return posicion;
             }
         }
