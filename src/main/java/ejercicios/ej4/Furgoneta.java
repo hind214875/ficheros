@@ -32,7 +32,7 @@ public class Furgoneta extends Vehiculo {
 
     @Override
     public String toString() {
-        return super.toString()+" Furgoneta" + " :"+ carga + " :" + volumen ;
+        return super.toString()+ " :"+ carga + " :" + volumen ;
     }
 
     

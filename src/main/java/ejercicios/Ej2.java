@@ -29,14 +29,15 @@ public class Ej2 {
 
         try ( BufferedWriter flujo = new BufferedWriter(new FileWriter(idFichero))) {
             String txt=" ";
+             Scanner sc = new Scanner(System.in);
             do {
-                System.out.println("Escribe que quieres");
-                Scanner sc = new Scanner(System.in);
+                System.out.println("Escribe que quieres");              
                 txt = sc.nextLine();
                 if((!txt.equals("EOF"))){
                    flujo.write(txt); 
+                   flujo.newLine();
                 }    
-                flujo.newLine();
+                
             } while ((!txt.equals("EOF")));
 
             // Metodo fluh() guarda cambios en disco 
