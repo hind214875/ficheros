@@ -4,14 +4,17 @@
  */
 package ejercicios.ej4;
 
-import java.util.Objects;
+import java.io.Serializable;
+
 
 /**
  *
  * @author hinda
  */
-public class Vehiculo {
-
+public class Vehiculo implements Serializable {
+ // Este atributo indica si hay cambios de versión en la clase
+    private static final long serialVersionUID = 1L;
+    
     String matricula;
     String marca;
     String modelo;
@@ -85,49 +88,13 @@ public class Vehiculo {
         this.color = color;
     }
 
-    public void aplicarDescuentoTarifa(double descuento) {
-        this.tarifa -= descuento;
-    }
+//    public void aplicarDescuentoTarifa(double descuento) {
+//        this.tarifa -= descuento;
+//    }
 
-    public boolean isDisponible() {
-        return disponible;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Vehiculo other = (Vehiculo) obj;
-        if (Double.doubleToLongBits(this.tarifa) != Double.doubleToLongBits(other.tarifa)) {
-            return false;
-        }
-        if (this.disponible != other.disponible) {
-            return false;
-        }
-        if (!Objects.equals(this.matricula, other.matricula)) {
-            return false;
-        }
-        if (!Objects.equals(this.marca, other.marca)) {
-            return false;
-        }
-        if (!Objects.equals(this.modelo, other.modelo)) {
-            return false;
-        }
-        return Objects.equals(this.color, other.color);
-    }
+//    public boolean isDisponible() {
+//        return disponible;
+//    }
 
     @Override
     public String toString() {

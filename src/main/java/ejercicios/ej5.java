@@ -25,6 +25,7 @@ public class ej5 {
         // Variables para guardar los datos que se van leyendo
         String[] tokens;
         String linea;
+        int sum = 0;
 
         System.out.println("Leyendo el fichero: " + idFichero);
 
@@ -38,12 +39,15 @@ public class ej5 {
                 linea = datosFichero.nextLine();
                 // Se guarda en el array de String cada elemento de la
                 // línea en función del carácter separador de campos del fichero CSV
-                tokens = linea.split(";");
-                for (String string : tokens) {
-                    System.out.print(string + "\t");
+                tokens = linea.split(" ");
+                for (String obj : tokens) {
+                    System.out.print(obj + "\t");
+                    sum+=Integer.parseInt(obj);
                 }
                 System.out.println();
+               
             }
+             System.out.println("la suma es: "+sum);
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         }

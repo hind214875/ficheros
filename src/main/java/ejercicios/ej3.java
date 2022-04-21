@@ -35,9 +35,9 @@ public class ej3 {
             for (int i = 0; i < 75; i++) { 
                 do{
                     letra = RandomStringUtils.randomAlphabetic(1);
-                    flujo.write(letra + ";");
+                    flujo.write(letra + ";");     
                 }while(!letra.equalsIgnoreCase("g"));  
-                   flujo.newLine();     
+                     flujo.newLine();  
             }
             // Metodo fluh() guarda cambios en disco 
             flujo.flush();

@@ -26,26 +26,24 @@ public class ej6 {
         String[] tokens;
 
         System.out.println("Leyendo el fichero: " + idFichero);
-
-        try ( Scanner datosFichero = new Scanner(new File(idFichero), "UTF-8")) {
+   
+        try (Scanner sc = new Scanner(new File(idFichero), "UTF-8")) {
             //while there is line for read
-            while (datosFichero.hasNextLine()) {
+            while (sc.hasNextLine()) {
                 //save the line in a String
-                linea = datosFichero.nextLine();
+                linea = sc.nextLine();
                 //take every caracter and save it in a array of String
                 tokens = linea.split(";");
                 //recorrer el token and show the strings
-//                for (String obj : tokens) {
-//                    System.out.print(obj + " ");      
-//                }
-                for (int i = 0; i < tokens.length; i++) {
+                for (int i=0;i<tokens.length;i++) {
                     System.out.print(tokens[i] + " ");
-                    if (buscarPattern(tokens) != -1) {
-                        System.out.println("el pattern exist en la linea:" + buscarPattern(tokens));
-                        System.out.println("la linea " + i);
+                    //matches("regex") return true
+                    if (tokens[i].matches("w e| W E")) {
+                        System.out.println("la posicion es: "+i);
                     }
                 }
                 System.out.println();
+                
 
             }
 
@@ -57,7 +55,7 @@ public class ej6 {
     public static int buscarPattern(String[] lista) {
         int posicion = -1;
         for (int i = 0; i < lista.length; i++) {
-            if (lista[i].contentEquals("w")) {
+            if (lista[i].contentEquals("w g")) {
                 posicion = i;
                 return posicion;
             }

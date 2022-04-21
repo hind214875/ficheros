@@ -22,6 +22,9 @@ public class Furgoneta extends Vehiculo {
         this.volumen = volumen;
     }
 
+    public Furgoneta() {
+    }
+
     public int getCarga() {
         return carga;
     }
@@ -29,6 +32,16 @@ public class Furgoneta extends Vehiculo {
     public int getVolumen() {
         return volumen;
     }
+
+    public void setCarga(int carga) {
+        this.carga = carga;
+    }
+
+    public void setVolumen(int volumen) {
+        this.volumen = volumen;
+    }
+    
+    
 
     @Override
     public String toString() {

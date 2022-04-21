@@ -30,6 +30,16 @@ public class Turismo extends Vehiculo {
         return marchaAutomatica;
     }
 
+    public void setPuertas(int puertas) {
+        this.puertas = puertas;
+    }
+
+    public void setMarchaAutomatica(boolean marchaAutomatica) {
+        this.marchaAutomatica = marchaAutomatica;
+    }
+    
+    
+
     @Override
     public String toString() {
         return super.toString()+" :" + puertas + " :" + marchaAutomatica ;

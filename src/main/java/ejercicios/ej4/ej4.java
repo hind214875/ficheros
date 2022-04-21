@@ -69,11 +69,11 @@ public class ej4 {
        try ( BufferedWriter flujo = new BufferedWriter(new FileWriter(idFichero))) {         
            for (Vehiculo obj : lista) {
                if(obj instanceof Turismo){
-                 flujo.write(" 0- "+obj.toString());
+                 flujo.write(" 0 - "+obj.toString());
                }else if(obj instanceof Deportivo){
-                   flujo.write(" 1- "+obj.toString());
+                   flujo.write(" 1 - "+obj.toString());
                }else{
-                   flujo.write(" 2- "+obj.toString()); 
+                   flujo.write(" 2 - "+obj.toString()); 
                }
                flujo.newLine();
            }

@@ -18,6 +18,10 @@ public class Deportivo extends Vehiculo{
         this.cilindrada = cilindrada;
     }
 
+    public Deportivo() {
+    }
+
+    
     public int getCilindrada() {
         return cilindrada;
     }
