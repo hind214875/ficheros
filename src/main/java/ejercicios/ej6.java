@@ -40,7 +40,7 @@ public class ej6 {
                     //matches("regex") return true
                     if (tokens[i].matches("w e| W E")) {
                         System.out.println("la posicion es: "+i);
-                    }
+                    }//corregir
                 }
                 System.out.println();
                 

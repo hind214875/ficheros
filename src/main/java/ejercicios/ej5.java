@@ -42,7 +42,7 @@ public class ej5 {
                 tokens = linea.split(" ");
                 for (String obj : tokens) {
                     System.out.print(obj + "\t");
-                    sum+=Integer.parseInt(obj);
+                    sum+=Integer.valueOf(obj);
                 }
                 System.out.println();
                

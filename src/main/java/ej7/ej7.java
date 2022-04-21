@@ -51,42 +51,44 @@ public class ej7 {
                 // Se guarda en el array de String cada elemento de la
                 tokens = linea.split(":");
 
-                if (linea.charAt(0) == '0') {
-                    Turismo turismo = new Turismo();
-                    turismo.setMatricula(tokens[0]);
-                    turismo.setMarca(tokens[1]);
-                    turismo.setModelo(tokens[2]);
-                    turismo.setColor(tokens[3]);
-                    turismo.setTarifa(Double.parseDouble(tokens[4]));
-                    turismo.setDisponible(Boolean.parseBoolean(tokens[5]));
-                    turismo.setPuertas(Integer.parseInt(tokens[6]));
-                    turismo.setMarchaAutomatica(Boolean.parseBoolean(tokens[7]));  
-                    vehiculos.add(turismo);
-                    
-                } else if (linea.charAt(1) == '1') {
-                    Deportivo deportivo = new Deportivo();
-                    deportivo.setCilindrada(Integer.parseInt(tokens[0]));
-                    deportivo.setMatricula(tokens[1]);
-                    deportivo.setMarca(tokens[2]);
-                    deportivo.setModelo(tokens[3]);
-                    deportivo.setColor(tokens[4]);
-                    deportivo.setTarifa(Double.parseDouble(tokens[5]));
-                    deportivo.setDisponible(Boolean.parseBoolean(tokens[6]));
-                    
-                    vehiculos.add(deportivo);
-                    
-                } else {
-                    Furgoneta furgoneta = new Furgoneta();
-                    furgoneta.setCarga(Integer.parseInt(tokens[0]));
-                    furgoneta.setVolumen(Integer.parseInt(tokens[1]));
-                    furgoneta.setMatricula(tokens[2]);
-                    furgoneta.setMarca(tokens[3]);
-                    furgoneta.setModelo(tokens[4]);
-                    furgoneta.setColor(tokens[5]);
-                    furgoneta.setTarifa(Double.parseDouble(tokens[6]));
-                    furgoneta.setDisponible(Boolean.parseBoolean(tokens[7]));
-                    
-                    vehiculos.add(furgoneta);
+                switch (linea.charAt(0)) {
+                    case '0':
+                        Turismo turismo = new Turismo();
+                        turismo.setMatricula(tokens[0].substring(4));
+                        turismo.setMarca(tokens[1]);
+                        turismo.setModelo(tokens[2]);
+                        turismo.setColor(tokens[3]);
+                        turismo.setTarifa(Double.parseDouble(tokens[4]));
+                        turismo.setDisponible(Boolean.parseBoolean(tokens[5]));
+                        turismo.setPuertas(Integer.parseInt(tokens[6]));
+                        turismo.setMarchaAutomatica(Boolean.parseBoolean(tokens[7]));
+                        vehiculos.add(turismo);
+                        break;
+                    case '1':
+                        Deportivo deportivo = new Deportivo();
+                        deportivo.setCilindrada(Integer.parseInt(tokens[0].substring(4)));
+                        deportivo.setMatricula(tokens[1]);
+                        deportivo.setMarca(tokens[2]);
+                        deportivo.setModelo(tokens[3]);
+                        deportivo.setColor(tokens[4]);
+                        deportivo.setTarifa(Double.parseDouble(tokens[5]));
+                        deportivo.setDisponible(Boolean.parseBoolean(tokens[6]));
+                        vehiculos.add(deportivo);
+                        break;
+                    case '2':
+                        Furgoneta furgoneta = new Furgoneta();
+                        furgoneta.setCarga(Integer.parseInt(tokens[0].substring(4)));
+                        furgoneta.setVolumen(Integer.parseInt(tokens[1]));
+                        furgoneta.setMatricula(tokens[2]);
+                        furgoneta.setMarca(tokens[3]);
+                        furgoneta.setModelo(tokens[4]);
+                        furgoneta.setColor(tokens[5]);
+                        furgoneta.setTarifa(Double.parseDouble(tokens[6]));
+                        furgoneta.setDisponible(Boolean.parseBoolean(tokens[7]));
+                        vehiculos.add(furgoneta);
+                        break;
+                    default:
+                        break;
                 }
 
             }

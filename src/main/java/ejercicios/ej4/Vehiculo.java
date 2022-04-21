@@ -4,16 +4,14 @@
  */
 package ejercicios.ej4;
 
-import java.io.Serializable;
 
 
 /**
  *
  * @author hinda
  */
-public class Vehiculo implements Serializable {
- // Este atributo indica si hay cambios de versión en la clase
-    private static final long serialVersionUID = 1L;
+public class Vehiculo{
+ 
     
     String matricula;
     String marca;
@@ -98,7 +96,7 @@ public class Vehiculo implements Serializable {
 
     @Override
     public String toString() {
-        return  matricula + " :" + marca + " :" + modelo + " :" + color + " :" + tarifa + " :" + disponible;
+        return  matricula + ":" + marca + ":" + modelo + ":" + color + ":" + tarifa + ":" + disponible;
     }
     
     
