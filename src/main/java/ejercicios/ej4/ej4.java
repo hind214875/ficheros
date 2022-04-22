@@ -30,16 +30,16 @@ public class ej4 {
       Vehiculo t9 = new Turismo("147852", "4562TUR", "Clio", "Fabia",90.00, false,2,true);
       Vehiculo t10 = new Turismo("369852", "7452TUR", "Skoda", "Fabia",90.00, false,2,true);
       
-      Vehiculo d1 = new Deportivo(2,"HG4568","Mercedes","wv","blue",100.00,true);
-      Vehiculo d2 = new Deportivo(2,"JH2531","Audi","wv","Rojo",100.00,true);
-      Vehiculo d3 = new Deportivo(2,"LK58635","Dacia","wv","Blanco",100.00,true);
-      Vehiculo d4 = new Deportivo(2,"NB52314","Mercedes","wv","blue",100.00,true);
-      Vehiculo d5 = new Deportivo(2,"HN2132","Dacia","wv","Rojo",100.00,true);
-      Vehiculo d6 = new Deportivo(2,"AB2531","Mercedes","wv","blue",100.00,true);
-      Vehiculo d7 = new Deportivo(2,"WE5321","Clio","wv","Blanco",100.00,true);
-      Vehiculo d8 = new Deportivo(2,"RT5656","Audi","wv","Negro",100.00,true);
-      Vehiculo d9 = new Deportivo(2,"AS1234","Clio","wv","blue",100.00,true);
-      Vehiculo d10 = new Deportivo(2,"CV5321","Audi","wv","Negro",100.00,true);
+      Vehiculo d1 = new Deportivo(2,"563214","Mercedes","wv","blue",100.00,true);
+      Vehiculo d2 = new Deportivo(2,"369852","Audi","wv","Rojo",100.00,true);
+      Vehiculo d3 = new Deportivo(2,"159874","Dacia","wv","Blanco",100.00,true);
+      Vehiculo d4 = new Deportivo(2,"654321","Mercedes","wv","blue",100.00,true);
+      Vehiculo d5 = new Deportivo(2,"563214","Dacia","wv","Rojo",100.00,true);
+      Vehiculo d6 = new Deportivo(2,"369852","Mercedes","wv","blue",100.00,true);
+      Vehiculo d7 = new Deportivo(2,"345674","Clio","wv","Blanco",100.00,true);
+      Vehiculo d8 = new Deportivo(2,"987654","Audi","wv","Negro",100.00,true);
+      Vehiculo d9 = new Deportivo(2,"159874","Clio","wv","blue",100.00,true);
+      Vehiculo d10 = new Deportivo(2,"357896","Audi","wv","Negro",100.00,true);
       
       Furgoneta f1 = new Furgoneta(10,20,"JH5234","furgoneta","dgd","Rojo",500,false);
       Furgoneta f2 = new Furgoneta(10,20,"JK15489","furgoneta","dgd","verde",500,false);

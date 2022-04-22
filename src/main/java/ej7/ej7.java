@@ -48,6 +48,7 @@ public class ej7 {
             while (datosFichero.hasNextLine()) {
                 // Guarda la línea completa en un String
                 linea = datosFichero.nextLine();
+                
                 // Se guarda en el array de String cada elemento de la
                 tokens = linea.split(":");
 
