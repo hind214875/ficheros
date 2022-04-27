@@ -8,6 +8,7 @@ package ej9;
 import ejercicios.ej4.Deportivo;
 import ejercicios.ej4.Furgoneta;
 import ejercicios.ej4.Turismo;
+import ejercicios.ej4.Vehiculo;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -22,59 +23,14 @@ import java.util.Scanner;
  */
 public class Ej9 {
 
-    //metodos
-     public static void escrituraFicheroFurgunetas(ArrayList<Furgoneta> lista) {
-        // Ficheros a crear. Ruta relativa a la carpeta raíz del proyecto
-        String idFichero = "furgonitas.csv";
-
-        try (BufferedWriter flujo = new BufferedWriter(new FileWriter(idFichero))) {
-            //flujo.newLine();
-            //recorrer la lista de vehiculos generada y escribir en el fichero
-            for (Furgoneta obj : lista) {
-                flujo.write(obj.getCarga()+ ";"+obj.getVolumen()+";"+obj.getMatricula()+";"+obj.getMarca()+";"+obj.getModelo()+";"+obj.getColor()
-                +";"+obj.getTarifa()+";"+obj.getDisponible());
-                flujo.newLine();
-            }
-            // Metodo fluh() guarda cambios en disco 
-             flujo.flush();
-            System.out.println("Fichero " + idFichero + " creado correctamente.");
-
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    public static void escrituraFicheroTurismos(ArrayList<Turismo> lista) {
-        // Ficheros a crear. Ruta relativa a la carpeta raíz del proyecto
-        String idFichero = "turismos.csv";
-
+    //metodos 
+    public static void escrituraFichero(String idFichero,ArrayList<Vehiculo> lista){
+        
         try (BufferedWriter flujo = new BufferedWriter(new FileWriter(idFichero))) {
             // flujo.newLine();
             //recorrer la lista de vehiculos generada y escribir en el fichero
-            for (Turismo obj : lista) {
-                flujo.write(obj.getPuertas()+";"+obj.isMarchaAutomatica()+";"+obj.getMatricula()+";"+obj.getMarca()+";"+obj.getModelo()+";"+obj.getColor()
-                +";"+obj.getTarifa()+";"+obj.getDisponible());
-                flujo.newLine();
-            }
-            // Metodo fluh() guarda cambios en disco 
-            flujo.flush();
-            System.out.println("Fichero " + idFichero + " creado correctamente.");
-
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    public static void escrituraFicheroDeportivos(ArrayList<Deportivo> lista) {
-        // Ficheros a crear. Ruta relativa a la carpeta raíz del proyecto
-        String idFichero = "deportivos.csv";
-
-        try (BufferedWriter flujo = new BufferedWriter(new FileWriter(idFichero))) {
-            // flujo.newLine();
-            //recorrer la lista de vehiculos generada y escribir en el fichero
-            for (Deportivo obj : lista) {
-                flujo.write(obj.getCilindrada()+";"+obj.getMatricula()+";"+obj.getMarca()+";"+obj.getModelo()+";"+obj.getColor()
-                +";"+obj.getTarifa()+";"+obj.getDisponible());
+            for (Vehiculo obj : lista) {
+                flujo.write(obj+"");
                 flujo.newLine();
             }
             // Metodo fluh() guarda cambios en disco 
@@ -88,6 +44,8 @@ public class Ej9 {
   
     public static void main(String[] args) {
         // Fichero a leer con datos de ejemplo
+        ArrayList<Vehiculo> vehiculos = new ArrayList<>();
+        
         ArrayList<Deportivo> deportivos = new ArrayList<>();
         ArrayList<Turismo> turismos = new ArrayList<>();
         ArrayList<Furgoneta> furgonetas = new ArrayList<>();
@@ -124,7 +82,7 @@ public class Ej9 {
                         turismo.setTarifa(Double.parseDouble(tokens[6]));
                         turismo.setDisponible(Boolean.parseBoolean(tokens[7]));
 
-                        turismos.add(turismo);
+                        vehiculos.add(turismo);
                         break;
                     case '1':
                         Deportivo deportivo = new Deportivo();
@@ -135,7 +93,7 @@ public class Ej9 {
                         deportivo.setColor(tokens[4]);
                         deportivo.setTarifa(Double.parseDouble(tokens[5]));
                         deportivo.setDisponible(Boolean.parseBoolean(tokens[6]));
-                        deportivos.add(deportivo);
+                        vehiculos.add(deportivo);
                         break;
                     case '2':
                         Furgoneta furgoneta = new Furgoneta();
@@ -147,7 +105,7 @@ public class Ej9 {
                         furgoneta.setColor(tokens[5]);
                         furgoneta.setTarifa(Double.parseDouble(tokens[6]));
                         furgoneta.setDisponible(Boolean.parseBoolean(tokens[7]));
-                        furgonetas.add(furgoneta);
+                        vehiculos.add(furgoneta);
                         break;
                     default:
                         break;
@@ -158,17 +116,24 @@ public class Ej9 {
             System.out.println(e.getMessage());
         }
 
-        System.out.println("furgonetas");
-        furgonetas.forEach(System.out::println);
-        System.out.println("turismos");
-        turismos.forEach(System.out::println);
-        System.out.println("deportivos");
-        deportivos.forEach(System.out::println);
-        
-        //write the 3 ficheros
-          escrituraFicheroFurgunetas(furgonetas);
-          escrituraFicheroTurismos(turismos);
-          escrituraFicheroDeportivos(deportivos);
+      
+          for (Vehiculo obj : vehiculos) {
+            if(obj instanceof Turismo){
+                turismos.add((Turismo) obj);
+                
+            }else if(obj instanceof Deportivo){
+                deportivos.add((Deportivo) obj);
+            }else{
+                furgonetas.add((Furgoneta) obj);            
+            }
+        }
+          
+           escrituraFichero("furgonetas.csv",vehiculos);
+           escrituraFichero("turismos.csv",vehiculos);
+           escrituraFichero("deportivos.csv",vehiculos);
+          
+          
+          
     }
 
 }

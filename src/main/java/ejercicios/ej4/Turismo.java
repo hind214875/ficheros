@@ -42,7 +42,7 @@ public class Turismo extends Vehiculo {
 
     @Override
     public String toString() {
-        return puertas + ":" + marchaAutomatica+":"+super.toString() ;
+        return puertas + ";" + marchaAutomatica+";"+super.toString() ;
     }
 
    

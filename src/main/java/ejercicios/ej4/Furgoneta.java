@@ -45,7 +45,7 @@ public class Furgoneta extends Vehiculo {
 
     @Override
     public String toString() {
-        return carga +":" + volumen+":"+super.toString() ;
+        return carga +";" + volumen+";"+super.toString() ;
     }
 
     

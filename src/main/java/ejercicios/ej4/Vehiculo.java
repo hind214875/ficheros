@@ -96,7 +96,7 @@ public class Vehiculo{
 
     @Override
     public String toString() {
-        return  matricula + ":" + marca + ":" + modelo + ":" + color + ":" + tarifa + ":" + disponible;
+        return  matricula + ";" + marca + ";" + modelo + ";" + color + ";" + tarifa + ";" + disponible;
     }
     
     
