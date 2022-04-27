@@ -19,27 +19,28 @@ public class ej4 {
     public static void main(String[] args) {
       //Crea 30 vehículos (10 Turismos, 10 Deportivos y 10 Furgonetas)
       //con valores de tu elección y guárdalos en una lista de objetos tipo Vehiculo.
-      Vehiculo t1 = new Turismo("345674", "4060TUR", "Skoda", "Fabia",90.00, false,2,true);
-      Vehiculo t2 = new Turismo("563214", "3020TUR", "HYUNDAI", "Fabia",90.00, false,2,true);
-      Vehiculo t3 = new Turismo("123456", "2010TUR", "Nissan", "Fabia",90.00, false,2,true);
-      Vehiculo t4 = new Turismo("654321", "7852TUR", "SUZUKI", "Fabia",90.00, false,2,true);
-      Vehiculo t5 = new Turismo("456789", "3652TUR", "Mercedes", "Fabia",90.00, false,2,true);
-      Vehiculo t6 = new Turismo("987654", "4785TUR", "Audi", "Fabia",90.00, false,2,true);
-      Vehiculo t7 = new Turismo("159874", "2365TUR", "Skoda", "Fabia",90.00, false,2,true);
-      Vehiculo t8 = new Turismo("357896", "9563TUR", "Audi", "Fabia",90.00, false,2,true);
-      Vehiculo t9 = new Turismo("147852", "4562TUR", "Clio", "Fabia",90.00, false,2,true);
-      Vehiculo t10 = new Turismo("369852", "7452TUR", "Skoda", "Fabia",90.00, false,2,true);
+      Vehiculo t1 = new Turismo(2,true,"345674","4060TUR","Clio","Fabia",90,false);
+      Vehiculo t2 = new Turismo(2,true,"563214","3020TUR","HYUNDAI","Fabia",90,false);
+      Vehiculo t3 = new Turismo(2,true,"123456","2010TUR","Nissan","Fabia",90,false);
+      Vehiculo t4 = new Turismo(2,true,"654321","7852TUR","SUZUKI","Fabia",90,false);
+      Vehiculo t5 = new Turismo(2,true,"456789","3652TUR","Mercedes","Fabia",90,false);
+      Vehiculo t6 = new Turismo(2,true,"987654","4785TUR","Audi","Fabia",90,false);
+      Vehiculo t7 = new Turismo(2,true,"159874","2365TUR","Clio","Fabia",90,false);
+      Vehiculo t8 = new Turismo(2,true,"357896","9563TUR","Audi","Fabia",9,false);
+      Vehiculo t9 = new Turismo(2,true,"147852","4562TUR","Clio","Fabia",90,false);
+      Vehiculo t10 = new Turismo(2,true,"369852","7452TUR","Clio","Fabia",90,false);
       
-      Vehiculo d1 = new Deportivo(2,"563214","Mercedes","wv","blue",100.00,true);
-      Vehiculo d2 = new Deportivo(2,"369852","Audi","wv","Rojo",100.00,true);
-      Vehiculo d3 = new Deportivo(2,"159874","Dacia","wv","Blanco",100.00,true);
-      Vehiculo d4 = new Deportivo(2,"654321","Mercedes","wv","blue",100.00,true);
-      Vehiculo d5 = new Deportivo(2,"563214","Dacia","wv","Rojo",100.00,true);
-      Vehiculo d6 = new Deportivo(2,"369852","Mercedes","wv","blue",100.00,true);
-      Vehiculo d7 = new Deportivo(2,"345674","Clio","wv","Blanco",100.00,true);
-      Vehiculo d8 = new Deportivo(2,"987654","Audi","wv","Negro",100.00,true);
-      Vehiculo d9 = new Deportivo(2,"159874","Clio","wv","blue",100.00,true);
-      Vehiculo d10 = new Deportivo(2,"357896","Audi","wv","Negro",100.00,true);
+      Vehiculo d1 = new Deportivo(2,"563214","Mercedes","wv","blue",100,true);
+      Vehiculo d2 = new Deportivo(2,"369852","Audi","wv","Rojo",100,true);
+      Vehiculo d3 = new Deportivo(2,"159874","Dacia","wv","Blanco",100,true);
+      Vehiculo d4 = new Deportivo(2,"654321","Mercedes","wv","blue",100,true);
+      Vehiculo d5 = new Deportivo(2,"563214","Dacia","wv","Rojo",100,true);
+      Vehiculo d6 = new Deportivo(2,"369852","Mercedes","wv","blue",100,true);
+      Vehiculo d7 = new Deportivo(2,"345674","Clio","wv","Blanco",100,true);
+      Vehiculo d8 = new Deportivo(2,"987654","Audi","wv","Negro",100,true);
+      Vehiculo d9 = new Deportivo(2,"159874","Clio","wv","blue",100,true);
+      Vehiculo d10 = new Deportivo(2,"357896","Audi","wv","Negro",100,true);
+      
       
       Furgoneta f1 = new Furgoneta(10,20,"JH5234","furgoneta","dgd","Rojo",500,false);
       Furgoneta f2 = new Furgoneta(10,20,"JK15489","furgoneta","dgd","verde",500,false);

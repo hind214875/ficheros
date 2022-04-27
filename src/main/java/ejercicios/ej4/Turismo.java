@@ -12,7 +12,7 @@ public class Turismo extends Vehiculo {
     private boolean marchaAutomatica;
 
     //constrectores
-    public Turismo(String matricula, String marca, String modelo, String color, double tarifa, boolean disponible, int puertas, boolean marchaAutomatica) {
+    public Turismo(int puertas, boolean marchaAutomatica,String matricula, String marca, String modelo, String color, double tarifa, boolean disponible) {
         super(matricula, marca, modelo, color, tarifa, disponible);
         this.puertas = puertas;
         this.marchaAutomatica = marchaAutomatica;
@@ -42,7 +42,7 @@ public class Turismo extends Vehiculo {
 
     @Override
     public String toString() {
-        return super.toString()+":" + puertas + ":" + marchaAutomatica ;
+        return puertas + ":" + marchaAutomatica+":"+super.toString() ;
     }
 
    
