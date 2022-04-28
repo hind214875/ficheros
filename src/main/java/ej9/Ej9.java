@@ -30,7 +30,7 @@ public class Ej9 {
             // flujo.newLine();
             //recorrer la lista de vehiculos generada y escribir en el fichero
             for (Vehiculo obj : lista) {
-                flujo.write(obj+"");
+                flujo.write(obj.toString());
                 flujo.newLine();
             }
             // Metodo fluh() guarda cambios en disco 
@@ -46,9 +46,9 @@ public class Ej9 {
         // Fichero a leer con datos de ejemplo
         ArrayList<Vehiculo> vehiculos = new ArrayList<>();
         
-        ArrayList<Deportivo> deportivos = new ArrayList<>();
-        ArrayList<Turismo> turismos = new ArrayList<>();
-        ArrayList<Furgoneta> furgonetas = new ArrayList<>();
+        ArrayList<Vehiculo> deportivos = new ArrayList<>();
+        ArrayList<Vehiculo> turismos = new ArrayList<>();
+        ArrayList<Vehiculo> furgonetas = new ArrayList<>();
         
         String idFichero = "vehiculos.txt";
 
@@ -117,7 +117,7 @@ public class Ej9 {
         }
 
       
-          for (Vehiculo obj : vehiculos) {
+        vehiculos.forEach(obj -> {
             if(obj instanceof Turismo){
                 turismos.add((Turismo) obj);
                 
@@ -126,11 +126,11 @@ public class Ej9 {
             }else{
                 furgonetas.add((Furgoneta) obj);            
             }
-        }
+        });
           
-           escrituraFichero("furgonetas.csv",vehiculos);
-           escrituraFichero("turismos.csv",vehiculos);
-           escrituraFichero("deportivos.csv",vehiculos);
+           escrituraFichero("furgonetas.csv",furgonetas);
+           escrituraFichero("turismos.csv",turismos);
+           escrituraFichero("deportivos.csv",deportivos);
           
           
           
