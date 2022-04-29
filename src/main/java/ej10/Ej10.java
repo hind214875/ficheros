@@ -22,6 +22,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -203,30 +204,38 @@ public class Ej10 {
 
         //parte stream
         /*Usando Streams, realiza las siguientes acciones sobre la lista de vehículos:
-          Imprime por pantalla todos los coches blancos, distintos, ordenador por matrícula.
-          Comprueba si hay algún Peugeot negro disponible en la lista.*/
+          Imprime por pantalla todos los coches blancos, distintos, ordenador por matrícula.*/
+         
         System.out.println("**********Parte Stream************");
-        Stream<Vehiculo> vehiculos = v.stream()
-                .filter(v1 -> v1.getColor().equalsIgnoreCase("blanco"))
-                .distinct().sorted((v1, v2) -> v1.getMatricula().compareTo(v2.getMatricula()));
         System.out.println("\nmostrar vehiculos blancos distintos ordenados con stream");
-        vehiculos.forEach(System.out::println);
+        v.stream()
+                .filter(v1 -> v1.getColor().equalsIgnoreCase("blanco"))
+                .distinct()
+                .sorted((v1, v2) -> v1.getMatricula().compareTo(v2.getMatricula()))
+                .forEach(System.out::println);
+     
 
-        //Imprime por pantalla todas las marcas de coches distintas de aquellos coches que estén disponibles.
-        /* Stream<Vehiculo> marcas;
-         marcas=v.stream()
-                 .map(vl->vl.getMarca())
-                 .distinct();*/
+        //Imprime por pantalla todas las marcas de coches distintas de aquellos coches que estén disponibles. 
+        System.out.println("list marcas");
+           v.stream()
+            .filter(coche-> coche.getDisponible())
+            .map(v1 ->v1.getMarca())
+            .distinct()
+            .forEach(System.out::println);
+                      
+
         // Saber la cantidad de vehículos Citroen.
         long cnt = v.stream()
-                .map(vl -> vl.getMarca().equalsIgnoreCase("citroen"))
+                .filter(vl -> vl.getMarca().equalsIgnoreCase("citroen"))
                 .count();
         System.out.println("\ncantidad:" + cnt);
         
         //Comprueba si hay algún Peugeot negro disponible en la lista.
          boolean b=v.stream()
-           .anyMatch(vl->vl.getMarca().equalsIgnoreCase("Peugeot")&&vl.getColor().equalsIgnoreCase("negro"));
+           .allMatch(vl->vl.getMarca().equalsIgnoreCase("Peugeot")&&vl.getColor().equalsIgnoreCase("negro")) ;
          System.out.println(b);
-           
+        
+   
+         
     }
 }
