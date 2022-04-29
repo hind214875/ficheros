@@ -22,8 +22,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
 
 /**
  *
@@ -200,7 +199,7 @@ public class Ej10 {
         borrarArchivos("turismos.csv");
 
         //Mostrar el contenido de la carpeta donde estaban los *.csv originales.
-        listarDirectorio(".");
+        listarDirectorio("./");
 
         //parte stream
         /*Usando Streams, realiza las siguientes acciones sobre la lista de vehículos:
@@ -232,12 +231,11 @@ public class Ej10 {
         
         //Comprueba si hay algún Peugeot negro disponible en la lista.
         System.out.println("Hay Peugeot negro disponible?");
-         boolean b=v.stream()
-                    .filter(coche->coche.getDisponible())
-                    .allMatch(vl->vl.getMarca().equalsIgnoreCase("Peugeot")&&vl.getColor().equalsIgnoreCase("negro")) ;
+         boolean b=v.stream()                
+                    .anyMatch(vl->vl.getMarca().equalsIgnoreCase("Peugeot")&&vl.getColor().equalsIgnoreCase("negro")) ;
          System.out.println(b);
         
-   
+      
          
     }
 }
