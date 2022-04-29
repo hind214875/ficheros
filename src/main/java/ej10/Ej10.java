@@ -231,8 +231,10 @@ public class Ej10 {
         System.out.println("\ncantidad:" + cnt);
         
         //Comprueba si hay algún Peugeot negro disponible en la lista.
+        System.out.println("Hay Peugeot negro disponible?");
          boolean b=v.stream()
-           .allMatch(vl->vl.getMarca().equalsIgnoreCase("Peugeot")&&vl.getColor().equalsIgnoreCase("negro")) ;
+                    .filter(coche->coche.getDisponible())
+                    .allMatch(vl->vl.getMarca().equalsIgnoreCase("Peugeot")&&vl.getColor().equalsIgnoreCase("negro")) ;
          System.out.println(b);
         
    
