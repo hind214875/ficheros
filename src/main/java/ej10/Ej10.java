@@ -77,7 +77,7 @@ public class Ej10 {
         }
     }
 
-    //method check in directory exist and give you the name
+    //method check if directory exist and give you the files
     public static void listarDirectorio(String ruta) {
         File f = new File(ruta);
         if (f.exists()) {
